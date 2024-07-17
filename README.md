@@ -27,15 +27,9 @@ npm start
 
 This will launch the app in your default web browser.
 
-## Contributing
-
-Contributions to improve the app are welcome. Please feel free to fork the repository, make your changes, and submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 
+========================
 
 
 # Getting Started with Create React App
