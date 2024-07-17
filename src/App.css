@@ -20,7 +20,7 @@ background-image: linear-gradient(
   hsl(0deg 4% 21%) 100%
 );
 }
-  
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -46,7 +46,7 @@ background-image: linear-gradient(
 
 @keyframes slideInUp {
   from {
-    transform: translateY(30px);
+    transform: translateY(10px);
     opacity: 0;
   }
   to {
