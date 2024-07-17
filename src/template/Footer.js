@@ -54,7 +54,7 @@ function Footer() {
     <div className="footer">
       {/* Footer Info */}
       <div className="footerInfo">
-        <p>&copy; {currentYear} React App. All rights reserved.</p>
+        <p>&copy; {currentYear} GeoExplorer. All rights reserved.</p>
         <p>Designed by bangwoo4 - Bootstrapped with React </p>
       </div>
       {/* Social Media */}

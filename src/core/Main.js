@@ -1,10 +1,10 @@
 import "./Main.css";
-import CountryAndCity from "./CountryAndCity";
+import TargetSelector from "./TargetSelector";
 
 function Main() {
   return (
     <div className="main">
-      <CountryAndCity />
+      <TargetSelector />
     </div>
   );
 }

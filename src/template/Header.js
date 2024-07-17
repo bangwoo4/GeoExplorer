@@ -26,7 +26,7 @@ function Header() {
   return (
     <div className="header">
       <div className="appName">
-        <h1>React App</h1>
+        <h1>GeoExplorer</h1>
         <img className="appLogo" src={appLogo} alt="App Logo"></img>
       </div>
       <div className="headerComponents">
@@ -43,7 +43,12 @@ function Header() {
         </button>
         {about && (
           <div ref={aboutRef} className="info">
-            <p>Change this</p>
+            <p>
+              <strong>GeoExplorer</strong> is a web application that allows you
+              to explore the world. You can select a country and a city to get
+              the currency, dial code, and flag of that country. You can also
+              jump into Google Maps to see the location of the selected city.
+            </p>
             <button className="closeInfoButton" onClick={toggleAbout}>
               Close
             </button>
