@@ -10,17 +10,25 @@
     padding: 0px;
 }
 
+.cac {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.selectBox{
+    padding: 10px;
+    background-color: rgb(166, 166, 166);
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 10px;
+}
 .selectBox select{
     width: 500px;
 }
 
-select, input{
-    font-size: 20px;
-    padding: 10px;
-    border: 1px black solid;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-}
+
 select:hover, input:hover{
     transform: translateY(-3px);
 }
@@ -29,26 +37,105 @@ select:hover, input:hover{
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    margin-bottom: 20px;
 }
 
-.searchBox button{
-    background-color:navajowhite;
-    border-radius: 10px;
+.selectBox select, input{
+    font-size: 15px;
     padding: 10px;
-    border: 10px;
+    border: 1px black solid;
+    border-radius: 5px;
     transition: transform 0.3s ease;
 }
 
-.searchBox button:hover{
-    transform: scale(1.02);
-    background-color:rgb(237, 192, 125);
+.searchBox input{
+    margin-top: 10px;
 }
 
-.searchBox .searchBar{
+.toggleSearchButton{
+    cursor: pointer;
+    background-color:rgb(146, 145, 143);
+    border-radius: 10px;
+    padding: 10px;
+    border: white 1px solid;
+    transition: transform 0.3s ease;
+}
+
+.toggleSearchButton:hover{
+    transform: scale(1.02);
+    background-color:rgb(85, 85, 85);
+}
+
+.searchBar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 10px;
     padding: 10px;
     border-radius: 10px;
     border: 1px solid black;
-    background-color: beige;
+    background-color: rgb(166, 166, 166);
     animation: slideInUp 1s;
+}
+
+.searchBar select, input{
+    font-size: 15px;
+    padding: 10px;
+    border: 1px black solid;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    width: 95%;
+}
+
+.clearButton{
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgb(183, 133, 133);
+    transition: transform 0.3s ease;
+    width: 200px;
+    border-radius: 10px;
+}
+.clearButton:hover{
+    background-color: rgb(238, 100, 100);
+    transform: translateY(-3px);
+}
+
+.clearButton2{
+    background-color: rgb(183, 133, 133);
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.clearButton2:hover{
+    background-color: rgb(238, 100, 100);
+    transform: translateY(-3px);
+}
+
+.mainFunctionDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.jumpToGM {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 30px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  width: 97%;
+}
+
+.jumpToGM:hover {
+  background-color: #45a049;
+  transform: translateY(-3px);
 }

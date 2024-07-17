@@ -7,6 +7,12 @@ function CountryAndCity() {
   const [showSearch, setShowSearch] = useState(false);
   const [countrySearch, setCountrySearch] = useState("");
   const [citySearch, setCitySearch] = useState("");
+  //URL for Google Maps
+  const openInGoogleMaps = (city, country) => {
+    const query = encodeURIComponent(`${city}, ${country}`);
+    const url = `https://www.google.com/maps/search/?api=1&query=${query}`;
+    window.open(url, "_blank");
+  };
 
   const handleCountryChange = (e) => {
     setCountry(e.target.value);
@@ -48,7 +54,9 @@ function CountryAndCity() {
   return (
     <div className="cac">
       <div className="searchBox">
-        <button onClick={toggleShowSearch}>Search</button>
+        <button onClick={toggleShowSearch} className="toggleSearchButton">
+          Search
+        </button>
         {showSearch && (
           <div className="searchBar">
             {/* search countries */}
@@ -56,15 +64,25 @@ function CountryAndCity() {
               type="text"
               value={countrySearch}
               onChange={handleCountrySearchChange}
-              placeholder="Search for a country 🔎"
+              placeholder="Search for a country 🎌"
             ></input>
             {/* search cties */}
             <input
               type="text"
               value={citySearch}
               onChange={handleCitySearchChange}
-              placeholder="Search for a city 🔍"
+              placeholder="Search for a city 🌆"
             ></input>
+            {/* clear button */}
+            <button
+              onClick={() => {
+                setCitySearch("");
+                setCountrySearch("");
+              }}
+              className="clearButton"
+            >
+              Clear
+            </button>
           </div>
         )}
       </div>
@@ -111,6 +129,30 @@ function CountryAndCity() {
             </option>
           )}
         </fieldset>
+        <button
+          className="clearButton2"
+          onClick={() => {
+            setCity("");
+            setCountry("");
+          }}
+        >
+          Clear Select
+        </button>
+      </div>
+      <div className="mainFunctionDiv">
+        {/* Jump into Google Maps */}
+        <button
+          className="jumpToGM"
+          onClick={() => {
+            if (city && country) {
+              openInGoogleMaps(city, country);
+            } else {
+              alert("Select a country and a city first.");
+            }
+          }}
+        >
+          Jump into Google Maps
+        </button>
       </div>
     </div>
   );
