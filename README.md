@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/64de4e6b-d75b-4862-9064-0efa6e2802e1)# Country and City Selector React App
+## Country and City Selector React App
 
 This React application provides a user-friendly interface for selecting a country and its corresponding city from dropdown menus. It's designed to streamline the process of choosing locations without the hassle of navigating through a complex UI.
 
