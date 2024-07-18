@@ -1,40 +1,34 @@
-## Country and City Selector React App
 
-This React application provides a user-friendly interface for selecting a country and its corresponding city from dropdown menus. It's designed to streamline the process of choosing locations without the hassle of navigating through a complex UI.
+# GeoExplorer React App
+
+This is a React application that provides information about different countries including their currency, dial code, capital, and ISO code. It also includes features to fetch and display weather and news information about specific cities within the selected country.
 
 ## Features
 
-- **Dynamic Country and City Selection**: Users can select a country from the first dropdown menu, which then dynamically updates the second dropdown menu with cities from the selected country.
-- **Search Functionality**: The city dropdown includes a search feature, allowing users to quickly find and select their desired city by typing its name.
-- **Clear Selection**: A clear button is provided to easily reset both the country and city selections, enhancing the user experience by allowing for quick changes.
-- **Jump to Google Maps**: A standout feature of this app is the ability to jump directly to Google Maps with the selected location. Once a country and city are selected, users can click the "Jump to Google Maps" button, which will open a new tab displaying the chosen location on Google Maps. This feature provides a seamless transition from selecting a location in the app to viewing it on a map, making it incredibly convenient for users who need to visualize the location or get directions.
+- Select a country from the dropdown menu
+- View information about the selected country including currency, dial code, capital, and ISO code
+- Fetch and display weather information for a specific city within the selected country
+- Fetch and display news articles related to that city
 
-## Getting Started
+## Technologies Used
 
-To get started with this app, clone the repository to your local machine and install the necessary dependencies.
+- React: A JavaScript library for building user interfaces
+- CSS: Styling the components
+- REST Countries API: Used to fetch country data
+- OpenWeatherMap API: Used to fetch weather data
+- News API: Used to fetch news articles
 
-```bash
-git clone <repository-url>
-cd <repository-folder>
-npm install
-```
-
-After installing the dependencies, you can start the application by running:
-
-```bash
-npm start
-```
-
-This will launch the app in your default web browser.
 
 ## Screenshots
 
-![image](https://github.com/user-attachments/assets/59794e40-879d-4ece-9250-81a7c09a84c3)
-![image](https://github.com/user-attachments/assets/240bb34b-0c7d-4275-8696-118554499735)
-![image](https://github.com/user-attachments/assets/5f2cadff-d335-41e3-b703-b943f3104929)
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+  <img src="https://github.com/user-attachments/assets/058de2ba-67c4-483e-8cc4-0bcb48fed3fd" alt="Screenshot 1" width="500" />
+  <img src="https://github.com/user-attachments/assets/fbc54dce-e8ac-43e3-b0f3-fd590107d9a4" alt="Screenshot 2" width="500" />
+  <img src="https://github.com/user-attachments/assets/b36de7f4-20f5-4e51-ba09-ec1bf996659d" alt="Screenshot 3" width="500" />
+  <img src="https://github.com/user-attachments/assets/7bc340e8-7b65-4376-9968-01e226d01b6b" alt="Screenshot 4" width="500" />
+</div>
 
 
-========================
 
 
 # Getting Started with Create React App
