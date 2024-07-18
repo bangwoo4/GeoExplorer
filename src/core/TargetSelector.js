@@ -14,6 +14,8 @@ function TargetSelector() {
   const [dialCode, setDialCode] = useState("");
   //flag
   const [flag, setFlag] = useState("");
+  //capital
+  const [capital, setCapital] = useState("");
 
   const handleCountryChange = (e) => {
     setCountry(e.target.value);
@@ -47,47 +49,38 @@ function TargetSelector() {
       : null;
   const selectedCountryFlag =
     flag && flag.data ? flag.data.find((c) => c.name === country) : null;
+  const selectedCountryCapital =
+    capital && capital.data
+      ? capital.data.find((c) => c.name === country)
+      : null;
+
+  /*
+  Fetch data
+  API provided from: https://documenter.getpostman.com/view/1134062/T1LJjU52
+  */
 
   useEffect(() => {
-    fetch("https://countriesnow.space/api/v0.1/countries")
-      .then((res) => res.json())
-      .then((data) => setData(data))
+    Promise.all([
+      fetch("https://countriesnow.space/api/v0.1/countries"),
+      fetch("https://countriesnow.space/api/v0.1/countries/currency"),
+      fetch("https://countriesnow.space/api/v0.1/countries/codes"),
+      fetch("https://countriesnow.space/api/v0.1/countries/flag/images"),
+      fetch("https://countriesnow.space/api/v0.1/countries/capital"),
+    ])
+      .then((responses) => Promise.all(responses.map((res) => res.json())))
+      .then(
+        ([countriesData, currencyData, codesData, flagData, capitalData]) => {
+          setData(countriesData);
+          setCurrencies(currencyData);
+          setDialCode(codesData);
+          setFlag(flagData);
+          setCapital(capitalData);
+        }
+      )
       .catch((error) => {
         alert("Error while fetching data: ", error);
       });
   }, []);
-
-  useEffect(() => {
-    fetch("https://countriesnow.space/api/v0.1/countries/currency")
-      .then((res) => res.json())
-      .then((data) => {
-        setCurrencies(data);
-      })
-      .catch((error) => {
-        alert("Error while fetching data: ", error);
-      });
-  });
-
-  useEffect(() => {
-    fetch("https://countriesnow.space/api/v0.1/countries/codes")
-      .then((res) => res.json())
-      .then((data) => {
-        setDialCode(data);
-      })
-      .catch((error) => {
-        alert("Error while fetching data: ", error);
-      });
-  });
-  useEffect(() => {
-    fetch("https://countriesnow.space/api/v0.1/countries/flag/images")
-      .then((res) => res.json())
-      .then((data) => {
-        setFlag(data);
-      })
-      .catch((error) => {
-        alert("Error while fetching data: ", error);
-      });
-  });
 
   //console.log(data);
   //console.log("test");
@@ -185,6 +178,7 @@ function TargetSelector() {
         selectedCountryCurrency={selectedCountryCurrency}
         selectedCountryDialCode={selectedCountryDialCode}
         selectedCountryFlag={selectedCountryFlag}
+        selectedCountryCapital={selectedCountryCapital}
         city={city}
         country={country}
       />
