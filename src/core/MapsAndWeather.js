@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./MapsAndWeather.css";
 
 //URL for Google Maps
 const openInGoogleMaps = (city, country) => {
@@ -9,6 +10,7 @@ const openInGoogleMaps = (city, country) => {
 
 const MapsAndWeather = ({ city, country }) => {
   const [weather, setWeather] = useState(null);
+  const [news, setNews] = useState(null);
 
   //fetch weather API
   //from https://openweathermap.org
@@ -26,6 +28,22 @@ const MapsAndWeather = ({ city, country }) => {
         });
     }
   }, [city, country]);
+
+  // Fetch news API
+  useEffect(() => {
+    if (city) {
+      const apiKey = "74582c5254af4892ae76224bd145c1bf"; //my API key
+      const newsUrl = `https://newsapi.org/v2/everything?q=${city}&apiKey=${apiKey}`;
+      fetch(newsUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          setNews(data.articles);
+        })
+        .catch((error) => {
+          console.error("Error fetching news data: ", error);
+        });
+    }
+  }, [city]);
 
   return (
     <div>
@@ -46,37 +64,61 @@ const MapsAndWeather = ({ city, country }) => {
       </div>
       {/* Display weather info in city */}
       <div className="weather">
-        <fieldset>
-          <legend>
-            Weather in <strong>{city}</strong>
-          </legend>
-          {weather && (
-            <div>
-              <img
-                src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`}
-                alt="weather icon"
-              />
-              <p>
-                {weather.weather[0].main} ({weather.weather[0].description})
-              </p>
-              <p>Temperature: {weather.main.temp}°C</p>
-              <p>Humidity: {weather.main.humidity}%</p>
-              <p>Wind: {weather.wind.speed} m/s</p>
-              <p>Feels like: {weather.main.feels_like}°C</p>
-              <p>Pressure: {weather.main.pressure} hPa</p>
-              <p>Visibility: {weather.visibility} meters</p>
-              <p>Cloudiness: {weather.clouds.all}%</p>
-              <p>
-                Sunrise:{" "}
-                {new Date(weather.sys.sunrise * 1000).toLocaleTimeString()}
-              </p>
-              <p>
-                Sunset:{" "}
-                {new Date(weather.sys.sunset * 1000).toLocaleTimeString()}
-              </p>
-            </div>
-          )}
-        </fieldset>
+        {city && country && (
+          <fieldset>
+            <legend>
+              Weather in <strong>{city}</strong>
+            </legend>
+            {weather && (
+              <div>
+                <img
+                  src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`}
+                  alt="weather icon"
+                />
+                <p>
+                  {weather.weather[0].main} ({weather.weather[0].description})
+                </p>
+                <p>Temperature: {weather.main.temp}°C</p>
+                <p>Humidity: {weather.main.humidity}%</p>
+                <p>Wind: {weather.wind.speed} m/s</p>
+                <p>Feels like: {weather.main.feels_like}°C</p>
+                <p>Pressure: {weather.main.pressure} hPa</p>
+                <p>Visibility: {weather.visibility} meters</p>
+                <p>Cloudiness: {weather.clouds.all}%</p>
+                {weather && weather.sys && (
+                  <p>
+                    Sunrise:{" "}
+                    {new Date(weather.sys.sunrise * 1000).toLocaleTimeString()}
+                  </p>
+                )}
+                {weather && weather.sys && (
+                  <p>
+                    Sunset:{" "}
+                    {new Date(weather.sys.sunset * 1000).toLocaleTimeString()}
+                  </p>
+                )}
+              </div>
+            )}
+          </fieldset>
+        )}
+      </div>
+      {/* Display news about the city */}
+      <div className="news">
+        {city && news && (
+          <fieldset>
+            <legend>
+              News about <strong>{city}</strong>
+            </legend>
+            {news &&
+              news.map((article, index) => (
+                <div key={index}>
+                  <a href={article.url} target="_blank" rel="noreferrer">
+                    {article.title}
+                  </a>
+                </div>
+              ))}
+          </fieldset>
+        )}
       </div>
     </div>
   );

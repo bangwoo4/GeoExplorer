@@ -44,10 +44,11 @@ function Header() {
         {about && (
           <div ref={aboutRef} className="info">
             <p>
-              <strong>GeoExplorer</strong> is a web application that allows you
-              to explore the world. You can select a country and a city to get
-              the currency, dial code, and flag of that country. You can also
-              jump into Google Maps to see the location of the selected city.
+              <strong>GeoExplorer</strong> is a simple web app that helps you
+              explore the world. You can search for a country and a city to get
+              information about the country's currency, dial code, flag, and
+              capital, as well as the weather in the city. You can also jump
+              into Google Maps to locate the city.
             </p>
             <button className="closeInfoButton" onClick={toggleAbout}>
               Close

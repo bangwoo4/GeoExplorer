@@ -6,6 +6,7 @@ const CountryInfo = ({
   selectedCountryDialCode,
   selectedCountryFlag,
   selectedCountryCapital,
+  selectedCountryIsoCode,
 }) => {
   return (
     <div className="mainFunctionDiv">
@@ -46,6 +47,13 @@ const CountryInfo = ({
               <span>
                 <strong>{selectedCountryDialCode.name}</strong>'s dial code:{" "}
                 <strong>{selectedCountryDialCode.dial_code}</strong>
+              </span>
+            </div>
+            {/* ISO code */}
+            <div className="countryInfo">
+              <span>
+                <strong>{selectedCountryIsoCode.name}</strong>'s ISO code:{" "}
+                <strong>{selectedCountryIsoCode.Iso3}</strong>
               </span>
             </div>
           </fieldset>

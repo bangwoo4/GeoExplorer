@@ -18,7 +18,7 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background-color: white;
   border-radius: 15px;
-  width: 80%;
+  width: 90%;
 }
 
 .selectBox {
@@ -87,6 +87,15 @@ body {
   width: 100%;
 }
 
+.searchBarInput{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
 .clearButton,
 .clearButton2 {
   cursor: pointer;
@@ -94,7 +103,7 @@ body {
   margin-top: 10px;
   background-color: #b78585;
   transition: all 0.3s ease;
-  border-radius: 10px;
+  border-radius: 2px;
   border: none;
   color: #fff;
   font-size: 16px;
@@ -123,6 +132,14 @@ body {
   border-radius: 10px;
 }
 
+.mainFunctionDiv fieldset{
+  border: 2px solid rgb(8, 215, 8);
+}
+
+.mainFunctionDiv legend{
+  color: rgb(8, 215, 8);
+}
+
 .countryFlag {
   display: flex;
   flex-direction: column;
@@ -131,9 +148,9 @@ body {
 }
 
 .flagimg {
-  border: 1px solid #ccc;
+  border: 3px solid black;
   border-radius: 10px;
-  width: 250px;
+  width: 300px;
 }
 
 .countryInfo {
@@ -144,85 +161,6 @@ body {
   margin-top: 10px;
 }
 
-.jumpToGM {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-top: 30px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  width: 100%;
-}
-
-.jumpToGM:hover {
-  background-color: #45a049;
-  transform: translateY(-3px);
-}
-
-/* background of the componens */
-.searchBar input, select, .selectBox input, select, .mainFunctionDiv input, select{
-    background-color: #8482821a;
-}
-
-/* weather */
-.weather {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 20px 0;
-  font-family: 'Arial', sans-serif;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.weather fieldset {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  animation: scaleIn 0.5s ease-in-out;
-}
-
-.weather legend {
-  width: auto;
-  padding: 0 10px;
-  border-radius: 4px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  animation: slideInLeft 0.5s ease-in-out;
-}
-
-.weather img {
-  display: block;
-  margin: 10px auto;
-  width: 80px;
-  height: 80px;
-  animation: bounceIn 0.5s ease-in-out;
-}
-
-.weather p {
-  color: #666;
-  font-size: 18px;
-  line-height: 1.6;
-  margin: 5px 0;
-  animation: fadeInUp 0.5s ease-in-out;
-}
-
-.weather p strong {
-  color: #333;
-}
-
-
-.weather p:last-child, .weather p:nth-last-child(2) {
-  font-style: italic;
-  color: #888;
-  animation: fadeInDown 0.5s ease-in-out;
-}
 
 
 

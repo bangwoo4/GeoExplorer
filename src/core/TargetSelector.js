@@ -17,6 +17,8 @@ function TargetSelector() {
   const [flag, setFlag] = useState("");
   //capital
   const [capital, setCapital] = useState("");
+  //ISO code
+  const [isoCode, setIsoCode] = useState("");
 
   const handleCountryChange = (e) => {
     setCountry(e.target.value);
@@ -54,6 +56,10 @@ function TargetSelector() {
     capital && capital.data
       ? capital.data.find((c) => c.name === country)
       : null;
+  const selectedCountryIsoCode =
+    isoCode && isoCode.data
+      ? isoCode.data.find((c) => c.name === country)
+      : null;
 
   /*
   Fetch data
@@ -67,15 +73,24 @@ function TargetSelector() {
       fetch("https://countriesnow.space/api/v0.1/countries/codes"),
       fetch("https://countriesnow.space/api/v0.1/countries/flag/images"),
       fetch("https://countriesnow.space/api/v0.1/countries/capital"),
+      fetch("https://countriesnow.space/api/v0.1/countries/iso"),
     ])
       .then((responses) => Promise.all(responses.map((res) => res.json())))
       .then(
-        ([countriesData, currencyData, codesData, flagData, capitalData]) => {
+        ([
+          countriesData,
+          currencyData,
+          codesData,
+          flagData,
+          capitalData,
+          isoCodeData,
+        ]) => {
           setData(countriesData);
           setCurrencies(currencyData);
           setDialCode(codesData);
           setFlag(flagData);
           setCapital(capitalData);
+          setIsoCode(isoCodeData);
         }
       )
       .catch((error) => {
@@ -94,20 +109,22 @@ function TargetSelector() {
         </button>
         {showSearch && (
           <div className="searchBar">
-            {/* search countries */}
-            <input
-              type="text"
-              value={countrySearch}
-              onChange={handleCountrySearchChange}
-              placeholder="Search for a country 🎌"
-            ></input>
-            {/* search cties */}
-            <input
-              type="text"
-              value={citySearch}
-              onChange={handleCitySearchChange}
-              placeholder="Search for a city 🌆"
-            ></input>
+            <div className="searchBarInput">
+              {/* search countries */}
+              <input
+                type="text"
+                value={countrySearch}
+                onChange={handleCountrySearchChange}
+                placeholder="Search for a country 🎌"
+              ></input>
+              {/* search cties */}
+              <input
+                type="text"
+                value={citySearch}
+                onChange={handleCitySearchChange}
+                placeholder="Search for a city 🌆"
+              ></input>
+            </div>
             {/* clear button */}
             <button
               onClick={() => {
@@ -180,6 +197,7 @@ function TargetSelector() {
         selectedCountryDialCode={selectedCountryDialCode}
         selectedCountryFlag={selectedCountryFlag}
         selectedCountryCapital={selectedCountryCapital}
+        selectedCountryIsoCode={selectedCountryIsoCode}
       />
       {/* Display maps and weather */}
       <MapsAndWeather city={city} country={country} />
