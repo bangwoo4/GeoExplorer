@@ -22,10 +22,10 @@ This is a React application that provides information about different countries 
 ## Screenshots
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-  <img src="https://github.com/user-attachments/assets/058de2ba-67c4-483e-8cc4-0bcb48fed3fd" alt="Screenshot 1" width="500" />
-  <img src="https://github.com/user-attachments/assets/fbc54dce-e8ac-43e3-b0f3-fd590107d9a4" alt="Screenshot 2" width="500" />
-  <img src="https://github.com/user-attachments/assets/b36de7f4-20f5-4e51-ba09-ec1bf996659d" alt="Screenshot 3" width="500" />
-  <img src="https://github.com/user-attachments/assets/7bc340e8-7b65-4376-9968-01e226d01b6b" alt="Screenshot 4" width="500" />
+  <img src="https://github.com/user-attachments/assets/058de2ba-67c4-483e-8cc4-0bcb48fed3fd" alt="Screenshot 1" width="400" />
+  <img src="https://github.com/user-attachments/assets/fbc54dce-e8ac-43e3-b0f3-fd590107d9a4" alt="Screenshot 2" width="400" />
+  <img src="https://github.com/user-attachments/assets/b36de7f4-20f5-4e51-ba09-ec1bf996659d" alt="Screenshot 3" width="400" />
+  <img src="https://github.com/user-attachments/assets/7bc340e8-7b65-4376-9968-01e226d01b6b" alt="Screenshot 4" width="400" />
 </div>
 
 
