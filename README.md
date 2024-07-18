@@ -29,9 +29,8 @@ This will launch the app in your default web browser.
 
 ## Screenshots
 
-![image](https://github.com/user-attachments/assets/e070b053-0056-436b-8b56-2ecdf52d679e)
-![image](https://github.com/user-attachments/assets/7fd5325d-b953-4702-9759-ad44a9067da9)
-
+![image](https://github.com/user-attachments/assets/59794e40-879d-4ece-9250-81a7c09a84c3)
+![image](https://github.com/user-attachments/assets/240bb34b-0c7d-4275-8696-118554499735)
 
 
 ========================
