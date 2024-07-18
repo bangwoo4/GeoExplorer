@@ -169,3 +169,60 @@ body {
 .searchBar input, select, .selectBox input, select, .mainFunctionDiv input, select{
     background-color: #8482821a;
 }
+
+/* weather */
+.weather {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+  font-family: 'Arial', sans-serif;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.weather fieldset {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  animation: scaleIn 0.5s ease-in-out;
+}
+
+.weather legend {
+  width: auto;
+  padding: 0 10px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  animation: slideInLeft 0.5s ease-in-out;
+}
+
+.weather img {
+  display: block;
+  margin: 10px auto;
+  width: 80px;
+  height: 80px;
+  animation: bounceIn 0.5s ease-in-out;
+}
+
+.weather p {
+  color: #666;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 5px 0;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+.weather p strong {
+  color: #333;
+}
+
+
+.weather p:last-child, .weather p:nth-last-child(2) {
+  font-style: italic;
+  color: #888;
+  animation: fadeInDown 0.5s ease-in-out;
+}
+
+
+

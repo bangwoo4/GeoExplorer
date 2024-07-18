@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CountryInfo from "./CountryInfo";
+import MapsAndWeather from "./MapsAndWeather";
 
 function TargetSelector() {
   const [data, setData] = useState(null);
@@ -179,9 +180,9 @@ function TargetSelector() {
         selectedCountryDialCode={selectedCountryDialCode}
         selectedCountryFlag={selectedCountryFlag}
         selectedCountryCapital={selectedCountryCapital}
-        city={city}
-        country={country}
       />
+      {/* Display maps and weather */}
+      <MapsAndWeather city={city} country={country} />
     </div>
   );
 }

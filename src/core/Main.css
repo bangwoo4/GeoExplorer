@@ -1,6 +1,7 @@
 .main{
     display: flex;
     height: auto;
+    min-height: 700px;
     /*background color for main part*/
     background-color: rgba(255, 255, 255, 1);
     justify-content: center;

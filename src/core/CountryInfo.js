@@ -1,20 +1,11 @@
 import React from "react";
 import "./Country.css";
 
-//URL for Google Maps
-const openInGoogleMaps = (city, country) => {
-  const query = encodeURIComponent(`${city}, ${country}`);
-  const url = `https://www.google.com/maps/search/?api=1&query=${query}`;
-  window.open(url, "_blank");
-};
-
 const CountryInfo = ({
   selectedCountryCurrency,
   selectedCountryDialCode,
   selectedCountryFlag,
   selectedCountryCapital,
-  city,
-  country,
 }) => {
   return (
     <div className="mainFunctionDiv">
@@ -59,21 +50,6 @@ const CountryInfo = ({
             </div>
           </fieldset>
         )}
-      <div>
-        {/* Jump into Google Maps */}
-        <button
-          className="jumpToGM"
-          onClick={() => {
-            if (city && country) {
-              openInGoogleMaps(city, country);
-            } else {
-              alert("Select a city first.");
-            }
-          }}
-        >
-          🗺️Locate <strong>{city}</strong> city in <em>Google Maps</em>
-        </button>
-      </div>
     </div>
   );
 };
