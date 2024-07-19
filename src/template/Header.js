@@ -24,7 +24,7 @@ function Header() {
     };
   }, []);
   return (
-    <div className="header">
+    <div className="header" id="top">
       <div className="appName">
         <h1>GeoExplorer</h1>
         <img className="appLogo" src={appLogo} alt="App Logo"></img>

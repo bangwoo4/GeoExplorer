@@ -191,16 +191,44 @@ function TargetSelector() {
           Clear Select
         </button>
       </div>
+      {country && city && (
+        <div className="tableOfContents">
+          <nav>
+            <ul>
+              <li>
+                <a href="#top">Go on top</a>
+              </li>
+              <li>
+                <a href="#displayCountryInfo">Country Info</a>
+              </li>
+              <li>
+                <a href="#cityMaps">City maps</a>
+              </li>
+              <li>
+                <a href="#cityWeather">City weather</a>
+              </li>
+              <li>
+                <a href="#cityNews">City news</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      )}
+
       {/* Display country's info */}
-      <CountryInfo
-        selectedCountryCurrency={selectedCountryCurrency}
-        selectedCountryDialCode={selectedCountryDialCode}
-        selectedCountryFlag={selectedCountryFlag}
-        selectedCountryCapital={selectedCountryCapital}
-        selectedCountryIsoCode={selectedCountryIsoCode}
-      />
+      <div className="displayCountryInfo" id="displayCountryInfo">
+        <CountryInfo
+          selectedCountryCurrency={selectedCountryCurrency}
+          selectedCountryDialCode={selectedCountryDialCode}
+          selectedCountryFlag={selectedCountryFlag}
+          selectedCountryCapital={selectedCountryCapital}
+          selectedCountryIsoCode={selectedCountryIsoCode}
+        />
+      </div>
       {/* Display maps and weather */}
-      <MapsAndWeather city={city} country={country} />
+      <div className="displayCityInfo" id="displayCityInfo">
+        <MapsAndWeather city={city} country={country} />
+      </div>
     </div>
   );
 }

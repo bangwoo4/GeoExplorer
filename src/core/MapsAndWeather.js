@@ -48,7 +48,7 @@ const MapsAndWeather = ({ city, country }) => {
   return (
     <div>
       {/* Jump into Google Maps */}
-      <div className="maps">
+      <div className="maps" id="cityMaps">
         <button
           className="jumpToGM"
           onClick={() => {
@@ -63,7 +63,7 @@ const MapsAndWeather = ({ city, country }) => {
         </button>
       </div>
       {/* Display weather info in city */}
-      <div className="weather">
+      <div className="weather" id="cityWeather">
         {city && country && (
           <fieldset>
             <legend>
@@ -72,38 +72,31 @@ const MapsAndWeather = ({ city, country }) => {
             {weather && (
               <div>
                 <img
-                  src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`}
+                  src={`http://openweathermap.org/img/w/${weather.weather?.[0]?.icon}.png`}
                   alt="weather icon"
                 />
-                <p>
-                  {weather.weather[0].main} ({weather.weather[0].description})
-                </p>
-                <p>Temperature: {weather.main.temp}°C</p>
-                <p>Humidity: {weather.main.humidity}%</p>
-                <p>Wind: {weather.wind.speed} m/s</p>
-                <p>Feels like: {weather.main.feels_like}°C</p>
-                <p>Pressure: {weather.main.pressure} hPa</p>
+
+                {weather.weather?.[0]?.main ? (
+                  <p>
+                    {weather.weather[0].main} ({weather.weather[0].description})
+                  </p>
+                ) : (
+                  <p>Weather info not available</p>
+                )}
+                <p>Temperature: {weather.main?.temp}°C</p>
+                <p>Humidity: {weather.main?.humidity}%</p>
+                <p>Wind: {weather.wind?.speed} m/s</p>
+                <p>Feels like: {weather.main?.feels_like}°C</p>
+                <p>Pressure: {weather.main?.pressure} hPa</p>
                 <p>Visibility: {weather.visibility} meters</p>
-                <p>Cloudiness: {weather.clouds.all}%</p>
-                {weather && weather.sys && (
-                  <p>
-                    Sunrise:{" "}
-                    {new Date(weather.sys.sunrise * 1000).toLocaleTimeString()}
-                  </p>
-                )}
-                {weather && weather.sys && (
-                  <p>
-                    Sunset:{" "}
-                    {new Date(weather.sys.sunset * 1000).toLocaleTimeString()}
-                  </p>
-                )}
+                <p>Cloudiness: {weather.clouds?.all}%</p>
               </div>
             )}
           </fieldset>
         )}
       </div>
       {/* Display news about the city */}
-      <div className="news">
+      <div className="news" id="cityNews">
         {city && news && (
           <fieldset>
             <legend>
