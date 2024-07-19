@@ -20,12 +20,22 @@ This is a React application that provides information about different countries 
 
 
 ## Screenshots
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-  <img src="https://github.com/user-attachments/assets/058de2ba-67c4-483e-8cc4-0bcb48fed3fd" alt="Screenshot 1" width="400" />
-  <img src="https://github.com/user-attachments/assets/fbc54dce-e8ac-43e3-b0f3-fd590107d9a4" alt="Screenshot 2" width="400" />
-  <img src="https://github.com/user-attachments/assets/b36de7f4-20f5-4e51-ba09-ec1bf996659d" alt="Screenshot 3" width="400" />
-  <img src="https://github.com/user-attachments/assets/7bc340e8-7b65-4376-9968-01e226d01b6b" alt="Screenshot 4" width="400" />
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+  <div style="margin: 10px;">
+    <img src="https://github.com/user-attachments/assets/9b679dc3-507e-49e6-b98f-dc10b2f2caa8" alt="Image 1" width="300">
+  </div>
+  <div style="margin: 10px;">
+    <img src="https://github.com/user-attachments/assets/cf14d08e-b8ab-4b6c-a251-507d90e8ac8a" alt="Image 2" width="300">
+  </div>
+  <div style="margin: 10px;">
+    <img src="https://github.com/user-attachments/assets/97c6fe59-2068-4e9a-bb99-310d9138d055" alt="Image 3" width="300">
+  </div>
+  <div style="margin: 10px;">
+    <img src="https://github.com/user-attachments/assets/31c566f0-c3fe-471a-892e-ded7ea2d27d2" alt="Image 4" width="300">
+  </div>
+  <div style="margin: 10px;">
+    <img src="https://github.com/user-attachments/assets/3d704389-da34-4105-9929-a4a80d2a97f0" alt="Image 5" width="300">
+  </div>
 </div>
 
 
