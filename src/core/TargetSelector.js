@@ -194,21 +194,22 @@ function TargetSelector() {
       {country && city && (
         <div className="tableOfContents">
           <nav>
+            <h3>Overview</h3>
             <ul>
               <li>
                 <a href="#top">Go on top</a>
               </li>
               <li>
-                <a href="#displayCountryInfo">Country Info</a>
+                <a href="#displayCountryInfo">{country} Info</a>
               </li>
               <li>
-                <a href="#cityMaps">City maps</a>
+                <a href="#cityMaps">{city} maps</a>
               </li>
               <li>
-                <a href="#cityWeather">City weather</a>
+                <a href="#cityWeather">{city} weather</a>
               </li>
               <li>
-                <a href="#cityNews">City news</a>
+                <a href="#cityNews">{city} news</a>
               </li>
             </ul>
           </nav>

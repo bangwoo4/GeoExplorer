@@ -18,7 +18,7 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background-color: white;
   border-radius: 15px;
-  width: 90%;
+  width: 85%;
 }
 
 .selectBox {
@@ -162,5 +162,47 @@ body {
 }
 
 
+/* Table of content */
+.tableOfContents {
+  border: 2px solid #474747;
+  border-radius: 12px;
+  position: fixed;
+  right: 0px;
+  top: 500px;
+  width: 100px;
+  max-height: 600px;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+}
 
+.tableOfContents h3 {
+  background-color: #474747;
+  color: #fff;
+  padding: 5px;
+  margin: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
 
+.tableOfContents ul {
+  list-style-type: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.tableOfContents li {
+  margin-bottom: 5px;
+}
+
+.tableOfContents a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.tableOfContents a:hover {
+  color: #007bff;
+  transform: translateX(5px) translateY(-3px);
+}

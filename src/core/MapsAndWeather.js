@@ -29,7 +29,7 @@ const MapsAndWeather = ({ city, country }) => {
     }
   }, [city, country]);
 
-  // Fetch news API
+  //fetch news API
   useEffect(() => {
     if (city) {
       const apiKey = "74582c5254af4892ae76224bd145c1bf"; //my API key
@@ -70,26 +70,85 @@ const MapsAndWeather = ({ city, country }) => {
               Weather in <strong>{city}</strong>
             </legend>
             {weather && (
-              <div>
-                <img
-                  src={`http://openweathermap.org/img/w/${weather.weather?.[0]?.icon}.png`}
-                  alt="weather icon"
-                />
-
-                {weather.weather?.[0]?.main ? (
-                  <p>
-                    {weather.weather[0].main} ({weather.weather[0].description})
-                  </p>
-                ) : (
-                  <p>Weather info not available</p>
-                )}
-                <p>Temperature: {weather.main?.temp}°C</p>
-                <p>Humidity: {weather.main?.humidity}%</p>
-                <p>Wind: {weather.wind?.speed} m/s</p>
-                <p>Feels like: {weather.main?.feels_like}°C</p>
-                <p>Pressure: {weather.main?.pressure} hPa</p>
-                <p>Visibility: {weather.visibility} meters</p>
-                <p>Cloudiness: {weather.clouds?.all}%</p>
+              <div className="weather-cards">
+                <div className="weather-card">
+                  <img
+                    src={`http://openweathermap.org/img/w/${weather.weather?.[0]?.icon}.png`}
+                    alt="weather icon"
+                  />
+                  <div className="weather-info">
+                    {weather.weather?.[0]?.main ? (
+                      <div>
+                        <h4>{weather.weather[0].main}</h4>
+                        <p>({weather.weather[0].description})</p>
+                      </div>
+                    ) : (
+                      <p>Weather info not available</p>
+                    )}
+                  </div>
+                </div>
+                <div className="weather-card">
+                  <div className="weather-info">
+                    <h4>Temperature</h4>
+                    <p>{weather.main?.temp}°C</p>
+                  </div>
+                </div>
+                <div className="weather-card">
+                  <div className="weather-info">
+                    <h4>Humidity</h4>
+                    <p>{weather.main?.humidity}%</p>
+                  </div>
+                </div>
+                <div className="weather-card">
+                  <div className="weather-info">
+                    <h4>Wind</h4>
+                    <p>{weather.wind?.speed} m/s</p>
+                  </div>
+                </div>
+                <div className="weather-card">
+                  <div className="weather-info">
+                    <h4>Feels Like</h4>
+                    <p>{weather.main?.feels_like}°C</p>
+                  </div>
+                </div>
+                <div className="weather-card">
+                  <div className="weather-info">
+                    <h4>Pressure</h4>
+                    <p>{weather.main?.pressure} hPa</p>
+                  </div>
+                </div>
+                <div className="weather-card">
+                  <div className="weather-info">
+                    <h4>Visibility</h4>
+                    <p>{weather.visibility} meters</p>
+                  </div>
+                </div>
+                <div className="weather-card">
+                  <div className="weather-info">
+                    <h4>Cloudiness</h4>
+                    <p>{weather.clouds?.all}%</p>
+                  </div>
+                </div>
+                <div className="weather-card">
+                  <div className="weather-info">
+                    <h4>Sunrise</h4>
+                    <p>
+                      {new Date(
+                        weather.sys?.sunrise * 1000
+                      ).toLocaleTimeString()}
+                    </p>
+                  </div>
+                </div>
+                <div className="weather-card">
+                  <div className="weather-info">
+                    <h4>Sunset</h4>
+                    <p>
+                      {new Date(
+                        weather.sys?.sunset * 1000
+                      ).toLocaleTimeString()}
+                    </p>
+                  </div>
+                </div>
               </div>
             )}
           </fieldset>
