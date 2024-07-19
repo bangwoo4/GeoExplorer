@@ -84,7 +84,6 @@ function TargetSelector() {
           flagData,
           capitalData,
           isoCodeData,
-          timeData,
         ]) => {
           setData(countriesData);
           setCurrencies(currencyData);
@@ -102,7 +101,7 @@ function TargetSelector() {
   //console.log(data);
   //console.log("test");
 
-  /* smooth scrolling href*/
+  /* smooth scrolling href */
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();

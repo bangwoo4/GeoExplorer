@@ -51,7 +51,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="footer">
+    <div className="footer" id="end">
       {/* Footer Info */}
       <div className="footerInfo">
         <p>&copy; {currentYear} GeoExplorer. All rights reserved.</p>

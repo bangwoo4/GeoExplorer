@@ -12,7 +12,9 @@ const CountryInfo = ({
     <div className="mainFunctionDiv">
       {selectedCountryCurrency &&
         selectedCountryDialCode &&
-        selectedCountryFlag && (
+        selectedCountryFlag &&
+        selectedCountryCapital &&
+        selectedCountryIsoCode && (
           <fieldset className="countryFieldset">
             <legend>
               <strong>{selectedCountryCurrency.name}</strong>'s info:{" "}
