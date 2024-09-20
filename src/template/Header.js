@@ -66,7 +66,7 @@ function Header() {
         {contact && (
           <div ref={contactRef} className="info">
             <p>
-              <strong>bangwoo4</strong>
+              <strong>bawfng04</strong>
               <br />
               <strong>nguyendinhbang53az@gmail.com</strong>
             </p>

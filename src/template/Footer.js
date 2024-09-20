@@ -21,19 +21,19 @@ const SocialLink = ({ href, label, icon, isImage }) => (
 
 const socialLinks = [
   {
-    href: "https://github.com/bangwoo4",
+    href: "https://github.com/bawfng04",
     label: "Github",
     icon: githubLogo,
     isImage: true,
   },
   {
-    href: "https://www.facebook.com/profile.php?id=100018136776949",
+    href: "https://www.facebook.com/bawfng04/",
     label: "Facebook",
     icon: facebookLogo,
     isImage: true,
   },
   {
-    href: "https://www.instagram.com/bangwoo4_/",
+    href: "https://www.instagram.com/bawfng04/",
     label: "Instagram",
     icon: instagramLogo,
     isImage: true,
@@ -55,7 +55,7 @@ function Footer() {
       {/* Footer Info */}
       <div className="footerInfo">
         <p>&copy; {currentYear} GeoExplorer. All rights reserved.</p>
-        <p>Designed by bangwoo4 - Bootstrapped with React </p>
+        <p>Designed by bawfng04 - Bootstrapped with React </p>
       </div>
       {/* Social Media */}
       <div className="socialMediaLinks">
