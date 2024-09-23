@@ -1,6 +1,9 @@
 
 Deploy completed: https://geoexplorer-ed0d5.web.app/
 
+
+Known Issue: News API not working because of CORS (Cross-Origin Resource Sharing). It still runs fine locally.
+
 # GeoExplorer React App
 
 This is a React application that provides information about different countries including their currency, dial code, capital, and ISO code. It also includes features to fetch and display weather and news information about specific cities within the selected country.
